@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com a Página</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+        button {
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Um cadastro de pessoas</h1>
+    <button onclick="ação()">Cadastrar nova Pessoa</button>
+    <section id="resultado">
+        <p>Pessoas que passaram por aqui...</p>
+    </section>
+    <script>
+        function ação() {
+            let nome = prompt('Nome da nova pessoa: ')
+            alert(`Vou cadastrar ${nome} logo abaixo.`)
+            // let res = window.document.getElementById('resultado')
+            let res = window.document.querySelector('section#resultado')
+            res.innerHTML += `<p>&#x1F596; Acabei de cadastrar <strong>${nome}</strong> no sistema.</p>`
+        }
+    </script>
+</body>
+</html>

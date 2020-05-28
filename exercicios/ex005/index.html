@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobro e Metade</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt; padding: 30px; }
+        section#saida { font-size: 20pt; }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Números</h1>
+    <button onclick="calcular()">Clique para calcular</button>
+    <button onclick="limpar()">Clique para limpar</button>
+    <section id="saida">
+        <h2>Seus resultados</h2>
+    </section>
+    <script>
+        // Escopo Global
+        let s = window.document.querySelector('section#saida')
+        alert('Seja bem-vindo(a)! \nEste programa vai calcular o dobro e a metade dos números!')
+        function calcular() {
+            // Escopo Local
+            let num = Number(window.prompt('Digite um número'))
+            s.innerHTML += `<p>O dobro de ${num} é igual a <strong>${num*2}</strong> e a metade é <strong>${num/2}</strong></p>`
+        }
+
+        function limpar() {
+            s.innerHTML = '<h2>Seus resultados</h2>'
+        }
+    </script>
+</body>
+</html>

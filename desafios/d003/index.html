@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+        body { font: 13pt Arial; }
+        button { font: 13pt Arial; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <button onclick="antesdepois()">Antecessor e Sucessor</button>
+    <script>
+        function antesdepois() {
+            let num = Math.trunc(Number(window.prompt('Digite um número inteiro qualquer')))
+            window.alert(`Antes de ${num}, temos o número ${Math.trunc(num-1)}. \nDepois de ${num}, temos o número ${Math.trunc(num+1)}.`)
+        }
+    </script>
+</body>
+</html>

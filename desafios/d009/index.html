@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style> 
+        body {
+            font: 13pt Arial;
+        }
+        button {
+            font: 13pt Arial;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <button onclick="reajuste()">Reajustar Salário</button>
+    <section id="saida">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <script>
+        function reajuste() {
+            let func = window.prompt('Qual é o nome do funcionário?')
+            let sal = Number(window.prompt(`Qual é o salário de ${func}?`))
+            let reaj = Number(window.prompt(`O salário de ${func} vai ser reajustado em qual porcentagem?`))
+            
+            let aum = (sal * reaj)/100
+            let novosal = sal + aum
+
+            let saida = document.getElementById('saida')
+            saida.innerHTML = `<h2>${func} recebeu um aumento salarial!</h2>`
+            saida.innerHTML += `<p>O salário atual era ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+            saida.innerHTML += `<p>Com um aumento de ${reaj.toLocaleString('pt-BR')}%, o salário vai aumentar ${aum.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} no próximo mês.</p>`
+            saida.innerHTML += `<p>E a partir daí, ${func} vai passar a ganhar ${novosal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+        }
+    </script>
+</body>
+</html>
